@@ -40,7 +40,7 @@ function showData(){
     var text  = [];
     var options; 
     var old = [
-["ONSDAG ","0","LEDIG","","1526","23-09-2020","09:00","75","CANCEL" ],
+["ONSDAG ","0","LEDIG","","1526","23-09-2021","09:00","75","CANCEL" ],
 ["ONSDAG ","0","LEDIG","","1526","23-09-2020","11:30","75","CANCEL" ],
 ["ONSDAG ","0","LEDIG","","1526","23-09-2020","12:45","75","CANCEL" ],
 ["TORSDAG","0","LEDIG","","1522","24-09-2020","09:00","30","CANCEL" ],
