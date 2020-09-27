@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <title> Hi Beanch 1 </title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
 var availableDate = [];
