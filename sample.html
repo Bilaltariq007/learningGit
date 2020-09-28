@@ -81,6 +81,16 @@ function showData(){
       options += "<option>"+this+"</option>";
     });
 
+// Add new function here
+    jQuery(".avaData").html(html);
+
+    var optionArray = text.filter(function(v){return v!==""});
+    options += "<option>-- Saearch By Text --</option>";
+    jQuery.each(optionArray, function() {
+      options += "<option>"+this+"</option>";
+    });
+// end new function here
+
     jQuery(".text_search").html(options);
     
     if( jQuery("body").width() > 768 ){
