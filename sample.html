@@ -91,162 +91,162 @@ function showData(){
         jQuery(".form-div").css("position","absolute");
     }
   
-    //jQuery( "#datepicker" ).datepicker({ 
-  //   dateFormat: "dd-mm-yy", firstDay: 1, 
-  //   beforeShowDay: available 
-  // });   
-  // jQuery( "#datepicker" ).val(""); 
+    jQuery( "#datepicker" ).datepicker({ 
+    dateFormat: "dd-mm-yy", firstDay: 1, 
+    beforeShowDay: available 
+  });   
+  jQuery( "#datepicker" ).val(""); 
 
-  //   $.ajax({
-  //   type: "POST",
-  //   url: "https://test.pawersystems.dk/ps/free_and_booked_spots?mailid=paw.harpiks@gmail.com",
-  //   success: function(response){
-  //       dataString = $.parseJSON(response);
-  //       if( !equalArray(old,dataString) )
-  //       {
-  //           jQuery.each(dataString, function() {
-  //               if( date == this[5] ){
+    $.ajax({
+    type: "POST",
+    url: "https://test.pawersystems.dk/ps/free_and_booked_spots?mailid=paw.harpiks@gmail.com",
+    success: function(response){
+        dataString = $.parseJSON(response);
+        if( !equalArray(old,dataString) )
+        {
+            jQuery.each(dataString, function() {
+                if( date == this[5] ){
                 
-  //                   if( $.inArray( this[7] , text ) == -1 ){
-  //                       text.push(this[7]);
-  //                   }
+                    if( $.inArray( this[7] , text ) == -1 ){
+                        text.push(this[7]);
+                    }
                 
-  //                   if( this[1] == 0 ){
-  //                       var dd = this[5]+" "+this[6]+"+"+this[4];
-  //                       html += "<div class='col-md-2 col-sm-12 col-xs-12 bgGreen slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div></div>";
-  //                   }
-  //                   else
-  //                       html += "<div class='col-md-2 col-sm-12 col-xs-12 bgSilver slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+this[3]+"' data-id='"+this[3]+"' onclick='cancelBooking(this)'> Cancel</button></div></div>";
+                    if( this[1] == 0 ){
+                        var dd = this[5]+" "+this[6]+"+"+this[4];
+                        html += "<div class='col-md-2 col-sm-12 col-xs-12 bgGreen slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div></div>";
+                    }
+                    else
+                        html += "<div class='col-md-2 col-sm-12 col-xs-12 bgSilver slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+this[3]+"' data-id='"+this[3]+"' onclick='cancelBooking(this)'> Cancel</button></div></div>";
 
-  //               }else{
-  //                   availableDate.push(this[5]);
-  //                   date = this[5];
-  //                   html += "<div class='col-md-12 col-sm-12 col-xs-12 bgGray "+date+" '><h3>"+date+" - "+this[0]+"</h3></div>";
-  //                   if( $.inArray( this[7] , text ) == -1 ){
-  //                       text.push(this[7]);
-  //                   }
+                }else{
+                    availableDate.push(this[5]);
+                    date = this[5];
+                    html += "<div class='col-md-12 col-sm-12 col-xs-12 bgGray "+date+" '><h3>"+date+" - "+this[0]+"</h3></div>";
+                    if( $.inArray( this[7] , text ) == -1 ){
+                        text.push(this[7]);
+                    }
                 
-  //                   if( this[1] == 0 ){
-  //                       var dd = this[5]+" "+this[6]+"+"+this[4];
-  //                       html += "<div class='col-md-2 col-sm-12 col-xs-12 bgGreen slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div></div>";
-  //                   }
-  //                   else
-  //                       html += "<div class='col-md-2 col-sm-12 col-xs-12 bgSilver slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+this[3]+"' data-id='"+this[3]+"' onclick='cancelBooking(this)'> Cancel</button></div></div>";
+                    if( this[1] == 0 ){
+                        var dd = this[5]+" "+this[6]+"+"+this[4];
+                        html += "<div class='col-md-2 col-sm-12 col-xs-12 bgGreen slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div></div>";
+                    }
+                    else
+                        html += "<div class='col-md-2 col-sm-12 col-xs-12 bgSilver slot "+this[5]+" '><p class='SlotClr'>"+this[2]+"</p><p>"+this[0]+"<br>"+this[5]+"<br>"+this[6]+"<br>"+this[7]+"</p><div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+this[3]+"' data-id='"+this[3]+"' onclick='cancelBooking(this)'> Cancel</button></div></div>";
 
-  //               }
-  //           });
-  //             jQuery(".avaData").html(html);
+                }
+            });
+              jQuery(".avaData").html(html);
       
-  //             var optionArray = text.filter(function(v){return v!==""});
-  //             options += "<option>-- Saearch By Text --</option>";
-  //             jQuery.each(optionArray, function() {
-  //               options += "<option>"+this+"</option>";
-  //             });
+              var optionArray = text.filter(function(v){return v!==""});
+              options += "<option>-- Saearch By Text --</option>";
+              jQuery.each(optionArray, function() {
+                options += "<option>"+this+"</option>";
+              });
 
-  //             jQuery(".text_search").html(options);
+              jQuery(".text_search").html(options);
               
-  //             if( jQuery("body").width() > 768 ){
-  //                 var maxHeight = Math.max.apply(null, $(".slot").map(function ()
-  //                 {
-  //                   return $(this).height();
-  //                 }).get());
-  //                 jQuery(".slot").css("height",maxHeight);
-  //                 jQuery(".form-div").css("position","absolute");
-  //             }
-  //           $( "#datepicker" ).datepicker({ 
-  //             dateFormat: "dd-mm-yy", firstDay: 1, 
-  //             beforeShowDay: available 
-  //           });   
-  //           $( "#datepicker" ).val(""); 
-  //       }
-  //       else{
-  //           console.log("Not Updated");
-  //       }
+              if( jQuery("body").width() > 768 ){
+                  var maxHeight = Math.max.apply(null, $(".slot").map(function ()
+                  {
+                    return $(this).height();
+                  }).get());
+                  jQuery(".slot").css("height",maxHeight);
+                  jQuery(".form-div").css("position","absolute");
+              }
+            $( "#datepicker" ).datepicker({ 
+              dateFormat: "dd-mm-yy", firstDay: 1, 
+              beforeShowDay: available 
+            });   
+            $( "#datepicker" ).val(""); 
+        }
+        else{
+            console.log("Not Updated");
+        }
      
-  //   }
-  // });
+    }
+  });
 
 }
 
-// function equalArray(a, b) {
-//     return JSON.stringify(a) == JSON.stringify(b);
-// }
+function equalArray(a, b) {
+    return JSON.stringify(a) == JSON.stringify(b);
+}
 
-// function cancelBooking(obj){
+function cancelBooking(obj){
     
-//     var url = jQuery(obj).attr("data-url");
-//      jQuery.ajax({url: url ,success: function(result){
-//             if( result.includes("<!DOCTYPE") )
-//                 location.reload();
-//             var data = JSON.parse(result); 
-//             if(data.check == 1){
-//                 var html = '<div class="flashMessage" style=" position: fixed; background: LimeGreen; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
-//                 jQuery("body").prepend(html);
-//                 setTimeout(function() {
-//                     $(".flashMessage").remove();
-//                 }, 3000); 
+    var url = jQuery(obj).attr("data-url");
+     jQuery.ajax({url: url ,success: function(result){
+            if( result.includes("<!DOCTYPE") )
+                location.reload();
+            var data = JSON.parse(result); 
+            if(data.check == 1){
+                var html = '<div class="flashMessage" style=" position: fixed; background: LimeGreen; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
+                jQuery("body").prepend(html);
+                setTimeout(function() {
+                    $(".flashMessage").remove();
+                }, 3000); 
                 
 //                 //================== Change HTML ===============
-//                 jQuery(obj).parent().parent().removeClass("bgSilver").addClass("bgGreen");
-//                 jQuery(obj).parent().parent().find(".SlotClr").text(data.status);
-//                 var dd = data.date+" "+data.time+"+"+data.dateid;
-//                 jQuery(obj).parent().parent().append("<div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div>");
-//                 jQuery(obj).parent().remove();
-//                 if( jQuery(window).width() > 768 )
-//                     jQuery(".form-div").css("position","absolute");
-//             } 
-//             else{
-//                 var html = '<div class="flashMessage" style=" position: fixed; background: red; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
-//                 jQuery("body").prepend(html);
-//                 setTimeout(function() {
-//                     $(".flashMessage").remove();
-//                 }, 3000);   
-//             }
+                jQuery(obj).parent().parent().removeClass("bgSilver").addClass("bgGreen");
+                jQuery(obj).parent().parent().find(".SlotClr").text(data.status);
+                var dd = data.date+" "+data.time+"+"+data.dateid;
+                jQuery(obj).parent().parent().append("<div class='form-div'><form><input placeholder='Comment...' type='text' name='com' class='form-control'><input type='hidden' name='x_email' value='paw.harpiks@gmail.com'><input type='hidden' name='tid' value='"+dd+"'></form><button data-dateid='"+this[4]+"' data-time='"+this[6]+"' data-date='"+this[5]+"' data-url='//test.pawersystems.dk/psa/useradmin.usertid_ajax' class='btn btn-default' onclick='bookTicket(this)'>Book</button></div>");
+                jQuery(obj).parent().remove();
+                if( jQuery(window).width() > 768 )
+                    jQuery(".form-div").css("position","absolute");
+            } 
+            else{
+                var html = '<div class="flashMessage" style=" position: fixed; background: red; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
+                jQuery("body").prepend(html);
+                setTimeout(function() {
+                    $(".flashMessage").remove();
+                }, 3000);   
+            }
             
-//         },
-//         error: function() { 
-//             location.reload();
-//         } 
-//     });  
+        },
+        error: function() { 
+            location.reload();
+        } 
+    });  
 
-// }
+}
 
 
-// function bookTicket(obj){
-//     var url = jQuery(obj).attr("data-url");
-//     var form = jQuery(obj).parent().find("form");
+function bookTicket(obj){
+    var url = jQuery(obj).attr("data-url");
+    var form = jQuery(obj).parent().find("form");
     
-//     jQuery.ajax({url: url , data: jQuery(form).serialize() ,success: function(result){
-//         if( result.includes("<!DOCTYPE") )
-//             location.reload();
-//         var data = JSON.parse(result); 
-//         if(data.check == 1){
-//             var html = '<div class="flashMessage" style=" position: fixed; background: LimeGreen; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
-//             jQuery("body").prepend(html);
-//             setTimeout(function() {
-//                 $(".flashMessage").remove();
-//             }, 3000); 
+    jQuery.ajax({url: url , data: jQuery(form).serialize() ,success: function(result){
+        if( result.includes("<!DOCTYPE") )
+            location.reload();
+        var data = JSON.parse(result); 
+        if(data.check == 1){
+            var html = '<div class="flashMessage" style=" position: fixed; background: LimeGreen; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
+            jQuery("body").prepend(html);
+            setTimeout(function() {
+                $(".flashMessage").remove();
+            }, 3000); 
             
 //             //================== Change HTML ===============
-//             jQuery(obj).parent().parent().removeClass("bgGreen").addClass("bgSilver");
-//             jQuery(obj).parent().parent().find(".SlotClr").text(data.status);
-//             jQuery(obj).parent().parent().append("<div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+data.id+"' onclick='cancelBooking(this)'> Cancel</button></div>");
-//             jQuery(obj).parent().remove();
-//         } 
-//         else{
-//             var html = '<div class="flashMessage" style=" position: fixed; background: red; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
-//             jQuery("body").prepend(html);
-//             setTimeout(function() {
-//                 $(".flashMessage").remove();
-//             }, 3000);   
-//         }
+            jQuery(obj).parent().parent().removeClass("bgGreen").addClass("bgSilver");
+            jQuery(obj).parent().parent().find(".SlotClr").text(data.status);
+            jQuery(obj).parent().parent().append("<div class='btn-div'><button class='btn btn-default' data-url='/psa/useradmin.usercancel_booking_ajax?num="+data.id+"' onclick='cancelBooking(this)'> Cancel</button></div>");
+            jQuery(obj).parent().remove();
+        } 
+        else{
+            var html = '<div class="flashMessage" style=" position: fixed; background: red; color: white; width: 100%; text-align: center; padding: 10px; z-index: 10; ">'+data.message+'</div>';
+            jQuery("body").prepend(html);
+            setTimeout(function() {
+                $(".flashMessage").remove();
+            }, 3000);   
+        }
         
-//     },
-//     error: function() { 
-//         location.reload();
-//     } 
-//     });  
-// }
+    },
+    error: function() { 
+        location.reload();
+    } 
+    });  
+}
 
 
 function available(date) {
